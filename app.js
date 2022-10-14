@@ -20,7 +20,7 @@ const drawTwoCards = () => {
     .then((data) => {
       // console.log(data.cards);
       data.cards.forEach(card => {
-        cardsDiv.innerHTML += `<img src="${card.image}" alt="card">`
+        cardsDiv.innerHTML += `<img src="${card.image}" class="card-image" alt="card">`
       });
     });
 }

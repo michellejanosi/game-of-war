@@ -1,9 +1,41 @@
-* {
+html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #1c1c1c;
+  height: 100vh;
+  font-family: "Exo 2", sans-serif;
+  background-image: url('img/table.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #fff100;
+  border: none;
+  padding: .55em;
+  cursor: pointer;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-image {
+  width: 30%;
+  padding: 1em 0;
+}
+
+#draw-card {
+  font-size: 1.2rem;
+  width: 100%;
+}
+
+#new-deck {
+  width: 20%;
 }
