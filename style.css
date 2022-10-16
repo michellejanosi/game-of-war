@@ -58,6 +58,10 @@ header {
   transform: translate(2px, 2px);
 }
 
+#draw-card:disabled {
+  cursor: not-allowed;
+}
+
 #new-deck {
   width: 20%;
   font-family: inherit;
