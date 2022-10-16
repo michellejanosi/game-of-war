@@ -27,9 +27,11 @@ header {
   display: flex;
 }
 
-#remaining-cards {
+#remaining-cards,
+#computer-score,
+#player-score {
   color: #fff;
-  margin-left: 1em;
+  margin: 1em;
 }
 
 .cards {
