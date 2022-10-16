@@ -44,3 +44,9 @@ button {
 #new-deck {
   width: 20%;
 }
+
+#header-text {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+}
