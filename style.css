@@ -53,10 +53,19 @@ header {
   width: 100%;
 }
 
+#draw-card:not([disabled]):active {
+  /* box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px; */
+  transform: translate(2px, 2px);
+}
+
 #new-deck {
   width: 20%;
   font-family: inherit;
   cursor: pointer;
+}
+
+#new-deck:active {
+  transform: translate(2px, 2px);
 }
 
 #header-text {
