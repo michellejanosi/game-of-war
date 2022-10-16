@@ -27,8 +27,11 @@ button {
 }
 
 .card-image {
-  width: 30%;
+  width: 60%;
   padding: 1em 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #draw-card {

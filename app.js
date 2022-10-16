@@ -1,4 +1,5 @@
 /* Deck of Cars API: https://deckofcardsapi.com */
+
 let deckId;
 const cardsDiv = document.querySelector(".cards");
 
