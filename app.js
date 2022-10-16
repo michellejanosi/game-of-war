@@ -19,9 +19,8 @@ const drawTwoCards = () => {
     .then((response) => response.json())
     .then((data) => {
       // console.log(data.cards);
-      data.cards.forEach(card => {
-        cardsDiv.innerHTML += `<img src="${card.image}" class="card-image" alt="card">`
-      });
+      cardsDiv.children[0].innerHTML = `<img src="${data.cards[0].image}" class="card-image" alt="card">`;
+      cardsDiv.children[1].innerHTML = `<img src="${data.cards[1].image}" class="card-image" alt="card">`;
     });
 }
 
