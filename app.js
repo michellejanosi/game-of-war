@@ -11,13 +11,26 @@ const playerScoreText = document.getElementById("player-score");
 let computerScore = 0;
 let playerScore = 0;
 
+drawCardsButton.disabled = true;
 
 const getNewDeck = () => {
   fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
     .then((response) => response.json())
     .then((data) => {
       deckId = data.deck_id;
+      drawCardsButton.disabled = false;
+      computerScoreText.style.color = "#fff";
+      playerScoreText.style.color = "#fff";
+      computerScoreText.classList.remove("winner-text");
+      playerScoreText.classList.remove("winner-text");
       remainingCards.textContent = `Remaining cards: 52`;
+      computerScore = 0;
+      playerScore = 0;
+      computerScoreText.textContent = "Computer Score: 0";
+      playerScoreText.textContent = "Your Score: 0";
+      headerText.textContent = "Game of War!";
+      cardsDiv.children[0].innerHTML = `<img src="img/back-of-card.png" class="card-image" alt="card">`;
+      cardsDiv.children[1].innerHTML = "";
     });
 }
 
@@ -31,6 +44,21 @@ const drawTwoCards = () => {
       remainingCards.innerHTML = `Remaining cards: ${data.remaining}`;
 
       determineCardWinner(data.cards[0], data.cards[1]);
+
+       if (data.remaining === 0) {
+         drawCardsButton.disabled = true;
+         if (computerScore > playerScore) {
+            computerScoreText.style.color="#fff100";
+            headerText.textContent = "Computer Won! 🤖";
+         } else if (computerScore < playerScore) {
+            playerScoreText.style.color="#fff100";
+            headerText.textContent = "You Won! 🥳";
+         } else {
+            computerScoreText.style.color = "#fff100";
+            playerScoreText.style.color = "#fff100";
+            headerText.textContent = "It's a tie!";
+         }
+       }
     });
 }
 
