@@ -5,6 +5,7 @@ const cardsDiv = document.querySelector(".cards");
 const newDeckButton = document.getElementById("new-deck");
 const drawCardsButton = document.getElementById("draw-card");
 const headerText = document.getElementById("header-text");
+const remainingCards = document.getElementById("remaining-cards");
 
 const getNewDeck = () => {
   fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
@@ -20,8 +21,11 @@ const drawTwoCards = () => {
     .then((response) => response.json())
     .then((data) => {
       // console.log(data.cards);
+      console.log(data.remaining)
       cardsDiv.children[0].innerHTML = `<img src="${data.cards[0].image}" class="card-image" alt="card">`;
       cardsDiv.children[1].innerHTML = `<img src="${data.cards[1].image}" class="card-image" alt="card">`;
+
+      remainingCards.innerHTML = `Remaining cards: ${data.remaining}`;
 
       determineCardWinner(data.cards[0], data.cards[1]);
     });

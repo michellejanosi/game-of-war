@@ -18,8 +18,18 @@ body {
 button {
   background-color: #fff100;
   border: none;
-  padding: .55em;
+  padding: 1em;
   cursor: pointer;
+  font-family: inherit;
+}
+
+header {
+  display: flex;
+}
+
+#remaining-cards {
+  color: #fff;
+  margin-left: 1em;
 }
 
 .cards {
@@ -43,6 +53,8 @@ button {
 
 #new-deck {
   width: 20%;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 #header-text {
